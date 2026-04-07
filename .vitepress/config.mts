@@ -1,11 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "EDU-PUBLISH",
   description: "通用高校通知聚合站技术文档",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
       { text: '演示站', link: 'https://example.edu.cn' },
@@ -14,7 +12,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '项目简介',
+        text: '简介和部署',
         collapsed: false,
         items: [
           { text: '什么是 EDU-PUBLISH', link: '/intro/' },
@@ -23,7 +21,7 @@ export default defineConfig({
         ]
       },
       {
-        text: '核心环节',
+        text: '使用',
         collapsed: false,
         items: [
           { text: '步骤1：消息桥接', link: '/use/bridge' },
@@ -32,16 +30,7 @@ export default defineConfig({
         ]
       },
       {
-        text: '配置指南',
-        collapsed: false,
-        items: [
-          { text: '站点品牌 (site.yaml)', link: '/config/site' },
-          { text: '订阅源 (subscriptions.yaml)', link: '/config/subscriptions' },
-          { text: '功能开关 (widgets.yaml)', link: '/config/widgets' }
-        ]
-      },
-      {
-        text: '开发者',
+        text: '开发',
         collapsed: false,
         items: [
           { text: '开发环境准备', link: '/dev/' },
