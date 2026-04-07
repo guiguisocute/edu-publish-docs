@@ -19,13 +19,14 @@
 
 建议将 Cloudflare Pages 与仓库的 `main` (或 `master`) 分支绑定，实现自动化上线。
 
-### 控制台关键参数 (必填)
-| 配置项 | 推荐值 |
+### 控制台构建配置 (必填)
+为了确保构建成功，请在 Cloudflare Pages 仪表盘中填写以下参数：
+
+| 配置项 | 填写值 |
 | :--- | :--- |
-| **Framework preset** | `None` |
+| **Framework preset** | `VitePress` |
 | **Build command** | `npm run docs:build` |
 | **Build output directory** | `.vitepress/dist` |
-| **Root directory** | `/` |
 
 ::: warning
 部署时需配置 fallback 到 `index.html`，以确保单页面应用 (SPA) 的路由正常工作。

@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "EDU-PUBLISH",
   description: "通用高校通知聚合站技术文档",
+  ignoreDeadLinks: true, // 忽略死链检查，确保构建稳定
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },

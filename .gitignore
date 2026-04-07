@@ -1,18 +1,23 @@
-# Dependencies
-node_modules
-.pnpm-debug.log*
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# VitePress cache and build output
-.vitepress/cache
+# VitePress build output
 .vitepress/dist
+.vitepress/cache
 
-# OS files
+# Editor metadata
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS metadata
 .DS_Store
 Thumbs.db
-
-# IDE files
-.vscode
-.idea
-
-# Local env files
-.env*.local
