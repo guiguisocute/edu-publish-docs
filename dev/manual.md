@@ -6,12 +6,17 @@
 
 1. **Docker 安装**: 确保系统已安装 Docker。
 2. **部署 NapCat**: 运行 NapCat 容器并登录 QQ。
-3. **部署 AstrBot**: 运行 AstrBot 容器，安装 `astrbot-QQtoLocal` 插件。
-4. **配置挂载**: 将项目的 `archive/` 目录挂载到 AstrBot 容器中。
+3. **部署 EDU-PUBLISH**: 运行 EDU-PUBLISH 容器，安装 `edu-publish-QQtoLocal` 插件。
+4. **配置挂载**: 将项目的 `archive/` 目录挂载到 EDU-PUBLISH 容器中。
 
 ## 2. Archive Submodule 初始化
 
 `archive/` 目录是一个独立的 Git submodule，需要手动初始化。
+
+```mermaid
+graph TD;
+    Main[Main Project] --> Archive[archive submodule];
+```
 
 ```bash
 git submodule init

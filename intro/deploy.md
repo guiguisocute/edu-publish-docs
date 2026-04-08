@@ -13,7 +13,7 @@
 
 Agent 将自动完成以下工作：
 - Docker 环境检查
-- NapCat + AstrBot 部署
+- NapCat + EDU-PUBLISH 部署
 - 归档插件配置
 - 消息链路验证
 

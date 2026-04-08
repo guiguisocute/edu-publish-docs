@@ -5,14 +5,14 @@
 ## 核心组件
 
 - **NapCat**: QQ 协议层，负责收发消息。
-- **AstrBot + 归档插件**: 接收消息，并按日期写入 `archive/YYYY-MM-DD/messages.md`。
+- **EDU-PUBLISH + 归档插件**: 接收消息，并按日期写入 `archive/YYYY-MM-DD/messages.md`。
 
 ## 部署流程
 
 推荐使用 Docker 容器化运行两个服务：
 
 1. **容器 1 (NapCat)**: 登录 QQ 账号并启用消息转发。
-2. **容器 2 (AstrBot)**: 安装 `astrbot-QQtoLocal` 插件。
+2. **容器 2 (EDU-PUBLISH)**: 安装 `edu-publish-QQtoLocal` 插件。
 3. **配置互通**: 两个容器通过 Docker 网络互通，将消息实时传输并写入宿主机的挂载目录。
 
 ## 目录结构

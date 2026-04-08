@@ -16,7 +16,7 @@ hero:
 features:
   - icon: 🤖
     title: AI 自动驱动
-    details: 依赖 AstrBot 插件及各类 Agent 自动分析整理通知，无需人工干预。
+    details: 依赖 EDU-PUBLISH 插件及各类 Agent 自动分析整理通知，无需人工干预。
   - icon: 📱
     title: 全平台支持
     details: 支持 PWA / RSS / 暗色模式，适配移动端和桌面端。

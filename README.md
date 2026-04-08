@@ -9,7 +9,7 @@
 
 ## 📖 文档架构
 
-本仓库的架构像素级参考了 [AstrBot](https://github.com/AstrBotDevs/AstrBot) 的文档设计：
+本仓库的架构像素级参考了 [EDU-PUBLISH](https://github.com/EDU-PUBLISHDevs/EDU-PUBLISH) 的文档设计：
 
 - **`.vitepress/`**: 网站核心配置与主题样式。
 - **`intro/`**: 项目简介、整体架构图及快速开始。

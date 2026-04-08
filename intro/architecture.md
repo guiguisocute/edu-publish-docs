@@ -9,8 +9,8 @@ flowchart LR
   subgraph bridge["步骤1：消息桥接"]
     direction TB
     QQ["QQ 群消息"] --> NapCat["NapCat"]
-    NapCat --> AstrBot["AstrBot + 归档插件"]
-    AstrBot --> archive["archive/YYYY-MM-DD/"]
+    NapCat --> EDU-PUBLISH["EDU-PUBLISH + 归档插件"]
+    EDU-PUBLISH --> archive["archive/YYYY-MM-DD/"]
   end
 
   subgraph agent["步骤2：Agent 内容生产"]

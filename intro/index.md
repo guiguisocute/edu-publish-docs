@@ -1,6 +1,6 @@
 # 什么是 EDU-PUBLISH
 
-**EDU-PUBLISH** 是一个依赖 AstrBot 插件 `astrbot-QQtoLocal` 以及各类 Agent（如 OpenClaw, ClaudeCode, OpenCode, Codex…）自动分析整理的 **通用高校通知聚合站模板**。
+**EDU-PUBLISH** 是一个依赖 EDU-PUBLISH 插件 `edu-publish-QQtoLocal` 以及各类 Agent（如 OpenClaw, ClaudeCode, OpenCode, Codex…）自动分析整理的 **通用高校通知聚合站模板**。
 
 ## 项目初衷
 
