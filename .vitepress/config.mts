@@ -15,12 +15,21 @@ export default withMermaid(defineConfig({
     sidebar: {
       '/intro/': [
         {
-          text: '简介和部署',
+          text: '简介',
           collapsed: false,
           items: [
             { text: '什么是 EDU-PUBLISH', link: '/intro/' },
             { text: '整体架构', link: '/intro/architecture' },
-            { text: '快速开始', link: '/intro/deploy' }
+            { text: '常见问题', link: '/intro/faq' }
+          ]
+        },
+        {
+          text: '部署',
+          collapsed: false,
+          items: [
+            { text: 'Agent 引导部署', link: '/intro/deploy-agent' },
+            { text: 'GitHub Actions 部署', link: '/intro/deploy-actions' },
+            { text: '手动部署', link: '/intro/deploy-manual' }
           ]
         }
       ],
