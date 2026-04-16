@@ -1,9 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h, onMounted, watch, nextTick } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, inBrowser } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import Viewer from 'viewerjs'
-import 'viewerjs/dist/viewer.min.css'
 import './styles/style.css'
 import './styles/custom-block.css'
 import Layout from './components/Layout.vue'
@@ -18,7 +16,13 @@ export default {
     const route = useRoute()
     let viewer;
     
-    const initViewer = () => {
+    const initViewer = async () => {
+      if (!inBrowser) return
+      
+      // Dynamic import to avoid SSR errors
+      const Viewer = (await import('viewerjs')).default
+      await import('viewerjs/dist/viewer.min.css')
+
       if (viewer) {
         viewer.destroy()
       }
