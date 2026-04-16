@@ -67,9 +67,9 @@ fork并clone[本项目仓库](https://github.com/guiguisocute/EDU-PUBLISH)后，
 
 
 ## 用你的Agent开始配置本项目环境
-1. **CLI 类 Agent（**OpenCode**、**Claude Code**、**Qoder CLI** 等：）**  
+1. **CLI 类 Agent（**OpenCode**、**Claude Code**、**Codex**、**Qoder CLI** 等：）**  
   
-  - 克隆完成后，在终端（黑框）输入：`cd Desktop\EDU-PUBLISH`,中进入项目文件夹后，直接运行 Agent，然后粘贴上面的指令。  
+  - 克隆完成后，在终端（黑框）输入：`cd EDU-PUBLISH`,中进入项目文件夹后，直接运行 Agent，然后粘贴上面的指令。  
   示例（以 Claude Code 为例）：  
 
   ```bash
