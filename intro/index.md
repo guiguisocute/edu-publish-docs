@@ -2,8 +2,6 @@
 
 **EDU-PUBLISH** 是一个依赖 AstrBot 插件 `astrbot-QQtoLocal` 以及各类 Agent（如 Claude Code, OpenCode, Codex, OpenClaw…）自动分析整理的 **通用高校通知聚合站模板**。
 
-UI 设计基于 [@Sallyn0225](https://github.com/Sallyn0225) 的 `gemini-rss-app`。
-
 ## 项目初衷
 
 - **解放班委**: 自动接收并整理 QQ 群消息，减少人工转发压力。

@@ -1,4 +1,4 @@
-# 站点品牌 (site.yaml)
+# site.yaml
 
 `config/site.yaml` 控制整个站点的外观和基本信息。
 

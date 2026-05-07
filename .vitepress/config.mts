@@ -5,6 +5,7 @@ export default withMermaid(defineConfig({
   title: "EDU-PUBLISH",
   description: "通用高校通知聚合站技术文档",
   ignoreDeadLinks: true, // 忽略死链检查，确保构建稳定
+  cleanUrls: true,
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
@@ -28,7 +29,6 @@ export default withMermaid(defineConfig({
           collapsed: false,
           items: [
             { text: 'Agent 引导部署', link: '/intro/deploy-agent' },
-            { text: 'GitHub Actions 部署', link: '/intro/deploy-actions' },
             { text: '手动部署', link: '/intro/deploy-manual' }
           ]
         }
@@ -38,9 +38,8 @@ export default withMermaid(defineConfig({
           text: '使用',
           collapsed: false,
           items: [
-            { text: '步骤1：消息桥接', link: '/use/bridge' },
-            { text: '步骤2：Agent 内容生产', link: '/use/agent' },
-            { text: '步骤3：站点部署', link: '/use/deploy-site' }
+            { text: '具体操作流程', link: '/use/use' },
+            { text: 'ymal格式及含义', link: '/use/format' }
           ]
         }
       ],
