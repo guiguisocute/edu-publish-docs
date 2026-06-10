@@ -40,6 +40,7 @@ export default withMermaid(defineConfig({
           items: [
             { text: '客制化你的站点', link: '/use/customize' },
             { text: '具体操作流程', link: '/use/use' },
+            { text: 'CMS 管理后台', link: '/use/cms' },
             { text: 'YAML 格式及含义', link: '/use/format' }
           ]
         }
