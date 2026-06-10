@@ -25,6 +25,6 @@
 site_name: "EDU Publish"
 site_short_name: "EDU Publish"
 site_description: "高校通知聚合站"
-site_url: "https://example.edu.cn"
+site_url: "https://edu-publish.site"
 organization_name: "示例大学"
 ```

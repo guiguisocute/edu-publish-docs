@@ -7,7 +7,7 @@ const { frontmatter } = useData()
 
 const tabs = [
   { text: '简介和部署', link: '/intro/', matchers: ['/intro/'] },
-  { text: '使用', link: '/use/bridge', matchers: ['/use/'] },
+  { text: '使用', link: '/use/customize', matchers: ['/use/'] },
   { text: '开发', link: '/dev/', matchers: ['/dev/'] }
 ]
 

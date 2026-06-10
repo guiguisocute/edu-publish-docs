@@ -9,7 +9,7 @@ export default withMermaid(defineConfig({
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '演示站', link: 'https://example.edu.cn' },
+      { text: '演示站', link: 'https://edu-publish.site' },
       { text: 'GitHub', link: 'https://github.com/guiguisocute/EDU-PUBLISH' }
     ],
 
@@ -38,8 +38,9 @@ export default withMermaid(defineConfig({
           text: '使用',
           collapsed: false,
           items: [
+            { text: '客制化你的站点', link: '/use/customize' },
             { text: '具体操作流程', link: '/use/use' },
-            { text: 'ymal格式及含义', link: '/use/format' }
+            { text: 'YAML 格式及含义', link: '/use/format' }
           ]
         }
       ],
@@ -49,22 +50,7 @@ export default withMermaid(defineConfig({
           collapsed: false,
           items: [
             { text: '开发环境准备', link: '/dev/' },
-            { text: '手动部署流程', link: '/dev/manual' }
-          ]
-        },
-        {
-          text: '渲染测试 (第一层)',
-          collapsed: false,
-          items: [
-            { text: 'Markdown 基础', link: '/dev/tests/markdown' },
-            {
-              text: '嵌套折叠测试 (第二层)',
-              collapsed: true,
-              items: [
-                { text: '提示块与容器', link: '/dev/tests/blocks' },
-                { text: '代码块与高亮', link: '/dev/tests/code' }
-              ]
-            }
+            { text: '构建流水线详解', link: '/dev/manual' }
           ]
         }
       ]

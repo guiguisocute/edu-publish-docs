@@ -36,8 +36,8 @@ EDU-PUBLISH 的消息桥接阶段依赖 **AstrBot** 作为机器人框架，搭�
 
 | 方式 | 适用场景 |
 | :--- | :--- |
-| [Cloudflare Pages Git 直连](/intro/deploy-agent) | 推荐，零 CI 配置，连接仓库即可 |
-| [GitHub Actions + Wrangler](/intro/deploy-actions) | 需要自定义 CI 流程（S3 上传、内容快照等） |
+| [Cloudflare Pages Git 直连](/intro/deploy-manual#方式-a-cloudflare-pages-git-直连-推荐) | 推荐，零 CI 配置，连接仓库即可 |
+| [GitHub Actions + Wrangler](/intro/deploy-manual#方式-b-github-actions-wrangler) | 需要自定义 CI 流程（S3 上传、内容快照等） |
 | [手动部署](/intro/deploy-manual) | 部署到 Vercel / Netlify / GitHub Pages / 自有服务器 |
 | Agent 引导部署 | 从零开始，让 Agent 读取 `.agent/SETUP.md` 自动完成全部搭建 |
 
@@ -104,7 +104,7 @@ widgets:
 参考项目根目录的 `.env.example`：
 
 ```bash
-SITE_URL=https://example.edu.cn
+SITE_URL=https://edu-publish.site
 
 # S3 兼容存储（可选）
 S3_BUCKET=

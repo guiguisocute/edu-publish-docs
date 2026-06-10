@@ -25,57 +25,100 @@
 site_name: "EDU Publish"
 site_short_name: "EDU Publish"
 site_description: "高校通知聚合站"
-site_url: "https://example.edu.cn"
+site_url: "https://edu-publish.site"
 organization_name: "示例大学"
 ```
 
 # 订阅源 (subscriptions.yaml)
 
-`config/subscriptions.yaml` 用于定义需要监听和聚合的消息来源。
+`config/subscriptions.yaml` 决定站点的导航结构与通知分类，分为三层：顶层 `categories`（分类枚举）、`schools`（学院/单位，一级层级）、每个 school 下的 `subscriptions`（订阅源，二级层级）。
 
-## 关键参数
+## categories（分类枚举）
 
-- `name`: 订阅源名称（如“学工部”、“教务处”）。
-- `slug`: 唯一标识符，用于目录名。
-- `icon`: 在 UI 中显示的图标。
-- `description`: 订阅源的简要描述。
+字符串数组。Agent 生成卡片时 `category` 字段必须从中选取，**数组末尾项为兜底值**（无法判断归属时使用）。
 
-## 监听配置
+## schools（一级层级）
 
-- `target`: 监听的 QQ 群号或外部接口。
-- `filter`: 消息过滤规则，防止非通知类消息干扰。
+- `slug`: 唯一标识符，用于卡片目录名（`content/card/<slug>/`）与 RSS 路径，**不能含中文和空格**。
+- `name` / `short_name`: 全称与简称。
+- `order`: 排序权重。
+- `icon`: 图标路径（如 `/img/xxx.svg`）。
+- `subscriptions`: 该学院下的订阅源列表，**不能为空**。
+
+## subscriptions（二级层级）
+
+- `title`: 订阅源名称，用于与归档消息中的「来源群」名称匹配。
+- `number`（可选）: QQ 群号，用于同名群消歧，不参与前端展示。
+- `enabled` / `order` / `icon` / `url`: 启用开关、排序、图标与外链。
 
 ```yaml
 # 示例 subscriptions.yaml
-- name: "教务处通知"
-  slug: "jwc"
-  icon: "school"
-  description: "全校教务教学通知聚合"
-  target: "123456789"  # 示例群号
+categories:
+  - 通知公告
+  - 竞赛相关
+  - 其它分类   # 末尾项为兜底分类
+
+schools:
+  - slug: info-engineering
+    name: 信息工程学院
+    short_name: 信工
+    order: 1
+    icon: /img/unit-icon-info-engineering.svg
+    subscriptions:
+      - title: 学院通知
+        number: "123456789"   # 可选：对应 QQ 群号，用于消歧
+        enabled: true
+        order: 1
+        icon: /img/unit-icon-info-engineering.svg
 ```
+
+::: warning 编译约束
+`schools` 必须为非空数组，且每个 school 至少有 1 条订阅，否则 `pnpm run build` 直接失败。编译器会为每个学院自动补一条「未知来源」兜底订阅，无内容时前端会自动隐藏。
+:::
 
 # 功能开关 (widgets.yaml)
 
-`config/widgets.yaml` 控制站点的各种增强功能和 UI 挂件。
+`config/widgets.yaml` 控制站点的各种增强功能和 UI 挂件，分为两层：
 
-## 关键参数
+## modules（顶层模块开关）
 
-- `show_search`: 是否显示搜索框。
-- `show_filter`: 是否显示筛选器。
-- `show_calendar`: 是否启用日历视图。
-- `show_summary`: 是否显示 AI 摘要。
-
-## 功能配置
-
-- `show_footer`: 是否显示页脚。
-- `show_dark_mode`: 是否支持暗色模式切换。
+布尔值，控制整个模块是否渲染：
 
 ```yaml
-# 示例 widgets.yaml
-show_search: true
-show_filter: true
-show_calendar: true
-show_summary: true
+modules:
+  dashboard: true       # 数据看板
+  right_sidebar: true   # 右侧边栏
+  search: true          # 搜索
+  view_counts: true     # 浏览量
+  rss_entry: true       # RSS 入口
+  pwa_install: true     # PWA 安装提示
+  stats_chart: true     # 统计图表
+  footer_branding: true # 页脚品牌
+  update_health: false  # 更新健康度
+```
+
+## widgets（组件细粒度配置）
+
+各组件的标题、默认状态等参数：
+
+```yaml
+widgets:
+  calendar:
+    enabled: true
+    title: "日期筛选"
+    default_expanded: true
+  search:
+    placeholder: "搜索通知标题、内容…"
+    show_hit_count: true
+  ai_summary:
+    enabled: true
+    title: "今日摘要"
+    empty_text: "暂无今日摘要"
+  view_counts:
+    enabled: true
+    label: "阅读量"
+  palette_switcher:
+    enabled: true
 ```
 
 # 卡片的 Markdown 格式
